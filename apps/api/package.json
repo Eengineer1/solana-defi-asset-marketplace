@@ -1,0 +1,7 @@
+{
+  "name": "@marketplace/api",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/server.ts",
+  "dependencies": { "express": "^5.1.0", "pg": "^8.13.0" }
+}

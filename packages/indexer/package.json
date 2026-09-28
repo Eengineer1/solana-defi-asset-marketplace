@@ -1,0 +1,7 @@
+{
+  "name": "@marketplace/indexer",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/worker.ts",
+  "dependencies": { "@solana/web3.js": "^1.99.0", "pg": "^8.13.0" }
+}

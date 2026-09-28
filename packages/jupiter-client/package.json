@@ -1,0 +1,7 @@
+{
+  "name": "@marketplace/jupiter-client",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "dependencies": { "@solana/web3.js": "^1.99.0" }
+}
