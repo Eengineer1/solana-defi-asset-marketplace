@@ -27,7 +27,10 @@ pub mod asset_marketplace {
 
     pub fn create_listing(ctx: Context<CreateListing>, price: u64) -> Result<()> {
         require!(price > 0, MarketError::ZeroPrice);
-        require!(ctx.accounts.asset_mint.decimals == 0, MarketError::NonNftMint);
+        require!(
+            ctx.accounts.asset_mint.decimals == 0,
+            MarketError::NonNftMint
+        );
         assert_canonical_metadata(
             &ctx.accounts.asset_mint.key(),
             &ctx.accounts.metadata.to_account_info(),
@@ -152,7 +155,11 @@ fn assert_canonical_metadata(mint: &Pubkey, metadata: &AccountInfo<'_>) -> Resul
         &METADATA_PROGRAM,
     );
     require_keys_eq!(metadata.key(), expected, MarketError::InvalidMetadataPda);
-    require_keys_eq!(*metadata.owner, METADATA_PROGRAM, MarketError::InvalidMetadataOwner);
+    require_keys_eq!(
+        *metadata.owner,
+        METADATA_PROGRAM,
+        MarketError::InvalidMetadataOwner
+    );
     Ok(())
 }
 
